@@ -1,0 +1,7 @@
+[package]
+name = "rusty_boy_desktop"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rusty_boy_core = { path = "../rusty_boy_core" }
