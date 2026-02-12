@@ -1,4 +1,4 @@
-struct MemoryBus {
+struct Bus {
     rom_bank_zero: [u8; 0x4000], // 16384 Bytes 16 KiB
     rom_bank_one: [u8; 0x4000],  // 16384 Bytes 16 KiB
     v_ram: [u8; 0x2000],         // 8192 Bytes 8 KiB
@@ -8,7 +8,7 @@ struct MemoryBus {
     h_ram: [u8; 0x7f],
 }
 
-impl MemoryBus {
+impl Bus {
     fn new() -> Self {
         Self {
             rom_bank_zero: [0; 0x4000],
