@@ -1,5 +1,6 @@
 mod opcodes;
 
+#[derive(Clone, Copy)]
 enum Register {
     A,
     B,
@@ -11,6 +12,7 @@ enum Register {
     L,
 }
 
+#[derive(Clone, Copy)]
 enum Register16 {
     AF,
     BC,
@@ -165,6 +167,40 @@ impl Cpu {
             Register::L => self.l = value,
         };
     }
+
+    pub fn dec_u8(&mut self, r: Register) {
+        let val = self.get_u8(r);
+        let dec = val.wrapping_sub(1);
+        let set_h = check_half_borrow_u8(val, 1);
+
+        self.set_u8(r, dec);
+        self.set_flag(Flags::N, true);
+        self.set_flag(Flags::Z, dec == 0);
+        self.set_flag(Flags::H, set_h);
+    }
+
+    pub fn inc_u8(&mut self, r: Register) {
+        let val = self.get_u8(r);
+        let inc = val.wrapping_add(1);
+        let set_h = check_half_carry_u8(val, 1);
+
+        self.set_u8(r, inc);
+        self.set_flag(Flags::N, false);
+        self.set_flag(Flags::Z, inc == 0);
+        self.set_flag(Flags::H, set_h);
+    }
+
+    pub fn dec_r16(&mut self, reg: Register16) {
+        let val = self.get_u16(reg);
+        let dec = val.wrapping_sub(1);
+        self.set_u16(reg, dec);
+    }
+
+    pub fn inc_r16(&mut self, reg: Register16) {
+        let val = self.get_u16(reg);
+        let dec = val.wrapping_add(1);
+        self.set_u16(reg, dec);
+    }
 }
 
 fn merge_bytes(high: u8, low: u8) -> u16 {
@@ -174,6 +210,39 @@ fn merge_bytes(high: u8, low: u8) -> u16 {
 fn get_low_byte(value: u16) -> u8 {
     (value & 0xFF) as u8
 }
+
 fn get_high_byte(value: u16) -> u8 {
     (value >> 8) as u8
+}
+
+fn check_carry_u8(lhs: u8, rhs: u8) -> bool {
+    lhs.checked_add(rhs).is_none()
+}
+
+fn check_carry_u16(lhs: u16, rhs: u16) -> bool {
+    lhs.checked_add(rhs).is_none()
+}
+
+fn check_borrow_u8(lhs: u8, rhs: u8) -> bool {
+    lhs.checked_sub(rhs).is_none()
+}
+
+fn check_borrow_u16(lhs: u16, rhs: u16) -> bool {
+    lhs.checked_sub(rhs).is_none()
+}
+
+fn check_half_carry_u8(lhs: u8, rhs: u8) -> bool {
+    ((lhs & 0xF) + (rhs & 0xF)) & 0xF0 != 0
+}
+
+fn check_half_carry_u16(lhs: u16, rhs: u16) -> bool {
+    ((lhs & 0xFFF) + (rhs & 0xFFF)) & 0xF000 != 0
+}
+
+fn check_half_borrow_u8(lhs: u8, rhs: u8) -> bool {
+    (lhs & 0xF).checked_sub(rhs & 0xF).is_none()
+}
+
+fn check_half_borrow_u16(lhs: u16, rhs: u16) -> bool {
+    (lhs & 0xFFF).checked_sub(rhs & 0xFFF).is_none()
 }
