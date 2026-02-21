@@ -10,6 +10,7 @@ enum Register {
     F,
     H,
     L,
+    HL,
 }
 
 #[derive(Clone, Copy)]
@@ -70,7 +71,7 @@ impl Cpu {
         merge_bytes(high, low)
     }
 
-    fn write_ram(&mut self, pc: u16) {
+    fn write_ram(&mut self, pc: u16, value: u8) {
         todo!()
     }
 
@@ -152,6 +153,10 @@ impl Cpu {
             Register::F => self.f,
             Register::H => self.h,
             Register::L => self.l,
+            Register::HL => {
+                let addr = self.get_u16(Register16::HL);
+                self.read_ram(addr)
+            }
         }
     }
 
@@ -165,6 +170,10 @@ impl Cpu {
             Register::F => self.f = value & 0xF0, // Bitwise to keep the upper 4 bits of flags and discard the lower
             Register::H => self.h = value,
             Register::L => self.l = value,
+            Register::HL => {
+                let addr = self.get_u16(Register16::HL);
+                self.write_ram(addr, value)
+            }
         };
     }
 
