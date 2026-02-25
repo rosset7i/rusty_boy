@@ -177,7 +177,7 @@ impl Cpu {
         };
     }
 
-    pub fn dec_u8(&mut self, r: Register) {
+    pub fn dec_r8(&mut self, r: Register) {
         let val = self.get_u8(r);
         let dec = val.wrapping_sub(1);
         let set_h = check_half_borrow_u8(val, 1);
@@ -188,7 +188,7 @@ impl Cpu {
         self.set_flag(Flags::H, set_h);
     }
 
-    pub fn inc_u8(&mut self, r: Register) {
+    pub fn inc_r8(&mut self, r: Register) {
         let val = self.get_u8(r);
         let inc = val.wrapping_add(1);
         let set_h = check_half_carry_u8(val, 1);
