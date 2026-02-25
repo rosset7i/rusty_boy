@@ -16,12 +16,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     rlca_0x07,
     ld_0x08,
     add_0x09,
-    ld_0x0A,
-    dec_0x0B,
-    inc_0x0C,
-    dec_0x0D,
-    ld_0x0E,
-    rrca_0x0F,
+    ld_0x0a,
+    dec_0x0b,
+    inc_0x0c,
+    dec_0x0d,
+    ld_0x0e,
+    rrca_0x0f,
     stop_0x10,
     ld_0x11,
     ld_0x12,
@@ -32,12 +32,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     rla_0x17,
     jr_0x18,
     add_0x19,
-    ld_0x1A,
-    dec_0x1B,
-    inc_0x1C,
-    dec_0x1D,
-    ld_0x1E,
-    rra_0x1F,
+    ld_0x1a,
+    dec_0x1b,
+    inc_0x1c,
+    dec_0x1d,
+    ld_0x1e,
+    rra_0x1f,
     jr_0x20,
     ld_0x21,
     ld_0x22,
@@ -48,12 +48,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     daa_0x27,
     jr_0x28,
     add_0x29,
-    ld_0x2A,
-    dec_0x2B,
-    inc_0x2C,
-    dec_0x2D,
-    ld_0x2E,
-    cpl_0x2F,
+    ld_0x2a,
+    dec_0x2b,
+    inc_0x2c,
+    dec_0x2d,
+    ld_0x2e,
+    cpl_0x2f,
     jr_0x30,
     ld_0x31,
     ld_0x32,
@@ -64,12 +64,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     scf_0x37,
     jr_0x38,
     add_0x39,
-    ld_0x3A,
-    dec_0x3B,
-    inc_0x3C,
-    dec_0x3D,
-    ld_0x3E,
-    ccf_0x3F,
+    ld_0x3a,
+    dec_0x3b,
+    inc_0x3c,
+    dec_0x3d,
+    ld_0x3e,
+    ccf_0x3f,
     ld_0x40,
     ld_0x41,
     ld_0x42,
@@ -80,12 +80,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     ld_0x47,
     ld_0x48,
     ld_0x49,
-    ld_0x4A,
-    ld_0x4B,
-    ld_0x4C,
-    ld_0x4D,
-    ld_0x4E,
-    ld_0x4F,
+    ld_0x4a,
+    ld_0x4b,
+    ld_0x4c,
+    ld_0x4d,
+    ld_0x4e,
+    ld_0x4f,
     ld_0x50,
     ld_0x51,
     ld_0x52,
@@ -96,12 +96,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     ld_0x57,
     ld_0x58,
     ld_0x59,
-    ld_0x5A,
-    ld_0x5B,
-    ld_0x5C,
-    ld_0x5D,
-    ld_0x5E,
-    ld_0x5F,
+    ld_0x5a,
+    ld_0x5b,
+    ld_0x5c,
+    ld_0x5d,
+    ld_0x5e,
+    ld_0x5f,
     ld_0x60,
     ld_0x61,
     ld_0x62,
@@ -112,12 +112,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     ld_0x67,
     ld_0x68,
     ld_0x69,
-    ld_0x6A,
-    ld_0x6B,
-    ld_0x6C,
-    ld_0x6D,
-    ld_0x6E,
-    ld_0x6F,
+    ld_0x6a,
+    ld_0x6b,
+    ld_0x6c,
+    ld_0x6d,
+    ld_0x6e,
+    ld_0x6f,
     ld_0x70,
     ld_0x71,
     ld_0x72,
@@ -128,12 +128,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     ld_0x77,
     ld_0x78,
     ld_0x79,
-    ld_0x7A,
-    ld_0x7B,
-    ld_0x7C,
-    ld_0x7D,
-    ld_0x7E,
-    ld_0x7F,
+    ld_0x7a,
+    ld_0x7b,
+    ld_0x7c,
+    ld_0x7d,
+    ld_0x7e,
+    ld_0x7f,
     add_0x80,
     add_0x81,
     add_0x82,
@@ -144,12 +144,12 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     add_0x87,
     adc_0x88,
     adc_0x89,
-    adc_0x8A,
-    adc_0x8B,
-    adc_0x8C,
-    adc_0x8D,
-    adc_0x8E,
-    adc_0x8F,
+    adc_0x8a,
+    adc_0x8b,
+    adc_0x8c,
+    adc_0x8d,
+    adc_0x8e,
+    adc_0x8f,
     sub_0x90,
     sub_0x91,
     sub_0x92,
@@ -160,108 +160,108 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
     sub_0x97,
     sbc_0x98,
     sbc_0x99,
-    sbc_0x9A,
-    sbc_0x9B,
-    sbc_0x9C,
-    sbc_0x9D,
-    sbc_0x9E,
-    sbc_0x9F,
-    and_0xA0,
-    and_0xA1,
-    and_0xA2,
-    and_0xA3,
-    and_0xA4,
-    and_0xA5,
-    and_0xA6,
-    and_0xA7,
-    xor_0xA8,
-    xor_0xA9,
-    xor_0xAA,
-    xor_0xAB,
-    xor_0xAC,
-    xor_0xAD,
-    xor_0xAE,
-    xor_0xAF,
-    or_0xB0,
-    or_0xB1,
-    or_0xB2,
-    or_0xB3,
-    or_0xB4,
-    or_0xB5,
-    or_0xB6,
-    or_0xB7,
-    cp_0xB8,
-    cp_0xB9,
-    cp_0xBA,
-    cp_0xBB,
-    cp_0xBC,
-    cp_0xBD,
-    cp_0xBE,
-    cp_0xBF,
-    ret_0xC0,
-    pop_0xC1,
-    jp_0xC2,
-    jp_0xC3,
-    call_0xC4,
-    push_0xC5,
-    add_0xC6,
-    rst_0xC7,
-    ret_0xC8,
-    ret_0xC9,
-    jp_0xCA,
-    prefix_0xCB,
-    call_0xCC,
-    call_0xCD,
-    adc_0xCE,
-    rst_0xCF,
-    ret_0xD0,
-    pop_0xD1,
-    jp_0xD2,
-    illegal_d3_0xD3,
-    call_0xD4,
-    push_0xD5,
-    sub_0xD6,
-    rst_0xD7,
-    ret_0xD8,
-    reti_0xD9,
-    jp_0xDA,
-    illegal_db_0xDB,
-    call_0xDC,
-    illegal_dd_0xDD,
-    sbc_0xDE,
-    rst_0xDF,
-    ldh_0xE0,
-    pop_0xE1,
-    ldh_0xE2,
-    illegal_e3_0xE3,
-    illegal_e4_0xE4,
-    push_0xE5,
-    and_0xE6,
-    rst_0xE7,
-    add_0xE8,
-    jp_0xE9,
-    ld_0xEA,
-    illegal_eb_0xEB,
-    illegal_ec_0xEC,
-    illegal_ed_0xED,
-    xor_0xEE,
-    rst_0xEF,
-    ldh_0xF0,
-    pop_0xF1,
-    ldh_0xF2,
-    di_0xF3,
-    illegal_f4_0xF4,
-    push_0xF5,
-    or_0xF6,
-    rst_0xF7,
-    ld_0xF8,
-    ld_0xF9,
-    ld_0xFA,
-    ei_0xFB,
-    illegal_fc_0xFC,
-    illegal_fd_0xFD,
-    cp_0xFE,
-    rst_0xFF,
+    sbc_0x9a,
+    sbc_0x9b,
+    sbc_0x9c,
+    sbc_0x9d,
+    sbc_0x9e,
+    sbc_0x9f,
+    and_0xa0,
+    and_0xa1,
+    and_0xa2,
+    and_0xa3,
+    and_0xa4,
+    and_0xa5,
+    and_0xa6,
+    and_0xa7,
+    xor_0xa8,
+    xor_0xa9,
+    xor_0xaa,
+    xor_0xab,
+    xor_0xac,
+    xor_0xad,
+    xor_0xae,
+    xor_0xaf,
+    or_0xb0,
+    or_0xb1,
+    or_0xb2,
+    or_0xb3,
+    or_0xb4,
+    or_0xb5,
+    or_0xb6,
+    or_0xb7,
+    cp_0xb8,
+    cp_0xb9,
+    cp_0xba,
+    cp_0xbb,
+    cp_0xbc,
+    cp_0xbd,
+    cp_0xbe,
+    cp_0xbf,
+    ret_0xc0,
+    pop_0xc1,
+    jp_0xc2,
+    jp_0xc3,
+    call_0xc4,
+    push_0xc5,
+    add_0xc6,
+    rst_0xc7,
+    ret_0xc8,
+    ret_0xc9,
+    jp_0xca,
+    prefix_0xcb,
+    call_0xcc,
+    call_0xcd,
+    adc_0xce,
+    rst_0xcf,
+    ret_0xd0,
+    pop_0xd1,
+    jp_0xd2,
+    illegal_d3_0xd3,
+    call_0xd4,
+    push_0xd5,
+    sub_0xd6,
+    rst_0xd7,
+    ret_0xd8,
+    reti_0xd9,
+    jp_0xda,
+    illegal_db_0xdb,
+    call_0xdc,
+    illegal_dd_0xdd,
+    sbc_0xde,
+    rst_0xdf,
+    ldh_0xe0,
+    pop_0xe1,
+    ldh_0xe2,
+    illegal_e3_0xe3,
+    illegal_e4_0xe4,
+    push_0xe5,
+    and_0xe6,
+    rst_0xe7,
+    add_0xe8,
+    jp_0xe9,
+    ld_0xea,
+    illegal_eb_0xeb,
+    illegal_ec_0xec,
+    illegal_ed_0xed,
+    xor_0xee,
+    rst_0xef,
+    ldh_0xf0,
+    pop_0xf1,
+    ldh_0xf2,
+    di_0xf3,
+    illegal_f4_0xf4,
+    push_0xf5,
+    or_0xf6,
+    rst_0xf7,
+    ld_0xf8,
+    ld_0xf9,
+    ld_0xfa,
+    ei_0xfb,
+    illegal_fc_0xfc,
+    illegal_fd_0xfd,
+    cp_0xfe,
+    rst_0xff,
 ];
 
 fn nop_0x00(cpu: &mut Cpu) -> u8 {
@@ -307,30 +307,30 @@ fn add_0x09(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x0A(cpu: &mut Cpu) -> u8 {
+fn ld_0x0a(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn dec_0x0B(cpu: &mut Cpu) -> u8 {
+fn dec_0x0b(cpu: &mut Cpu) -> u8 {
     cpu.dec_r16(Register16::BC);
     2
 }
 
-fn inc_0x0C(cpu: &mut Cpu) -> u8 {
+fn inc_0x0c(cpu: &mut Cpu) -> u8 {
     cpu.inc_r8(Register::C);
     1
 }
 
-fn dec_0x0D(cpu: &mut Cpu) -> u8 {
+fn dec_0x0d(cpu: &mut Cpu) -> u8 {
     cpu.dec_r8(Register::C);
     1
 }
 
-fn ld_0x0E(cpu: &mut Cpu) -> u8 {
+fn ld_0x0e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rrca_0x0F(cpu: &mut Cpu) -> u8 {
+fn rrca_0x0f(cpu: &mut Cpu) -> u8 {
     1
 }
 
@@ -377,30 +377,30 @@ fn add_0x19(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x1A(cpu: &mut Cpu) -> u8 {
+fn ld_0x1a(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn dec_0x1B(cpu: &mut Cpu) -> u8 {
+fn dec_0x1b(cpu: &mut Cpu) -> u8 {
     cpu.dec_r16(Register16::DE);
     2
 }
 
-fn inc_0x1C(cpu: &mut Cpu) -> u8 {
+fn inc_0x1c(cpu: &mut Cpu) -> u8 {
     cpu.inc_r8(Register::E);
     1
 }
 
-fn dec_0x1D(cpu: &mut Cpu) -> u8 {
+fn dec_0x1d(cpu: &mut Cpu) -> u8 {
     cpu.dec_r8(Register::E);
     1
 }
 
-fn ld_0x1E(cpu: &mut Cpu) -> u8 {
+fn ld_0x1e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rra_0x1F(cpu: &mut Cpu) -> u8 {
+fn rra_0x1f(cpu: &mut Cpu) -> u8 {
     1
 }
 
@@ -447,30 +447,30 @@ fn add_0x29(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x2A(cpu: &mut Cpu) -> u8 {
+fn ld_0x2a(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn dec_0x2B(cpu: &mut Cpu) -> u8 {
+fn dec_0x2b(cpu: &mut Cpu) -> u8 {
     cpu.dec_r8(Register::HL);
     2
 }
 
-fn inc_0x2C(cpu: &mut Cpu) -> u8 {
+fn inc_0x2c(cpu: &mut Cpu) -> u8 {
     cpu.inc_r8(Register::L);
     1
 }
 
-fn dec_0x2D(cpu: &mut Cpu) -> u8 {
+fn dec_0x2d(cpu: &mut Cpu) -> u8 {
     cpu.dec_r8(Register::L);
     1
 }
 
-fn ld_0x2E(cpu: &mut Cpu) -> u8 {
+fn ld_0x2e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn cpl_0x2F(cpu: &mut Cpu) -> u8 {
+fn cpl_0x2f(cpu: &mut Cpu) -> u8 {
     1
 }
 
@@ -517,54 +517,66 @@ fn add_0x39(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x3A(cpu: &mut Cpu) -> u8 {
+fn ld_0x3a(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn dec_0x3B(cpu: &mut Cpu) -> u8 {
+fn dec_0x3b(cpu: &mut Cpu) -> u8 {
     cpu.dec_r16(Register16::SP);
     2
 }
 
-fn inc_0x3C(cpu: &mut Cpu) -> u8 {
+fn inc_0x3c(cpu: &mut Cpu) -> u8 {
     cpu.inc_r8(Register::A);
     1
 }
 
-fn dec_0x3D(cpu: &mut Cpu) -> u8 {
+fn dec_0x3d(cpu: &mut Cpu) -> u8 {
     cpu.dec_r8(Register::A);
     1
 }
 
-fn ld_0x3E(cpu: &mut Cpu) -> u8 {
+fn ld_0x3e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ccf_0x3F(cpu: &mut Cpu) -> u8 {
+fn ccf_0x3f(cpu: &mut Cpu) -> u8 {
     1
 }
 
 fn ld_0x40(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::B, val);
     1
 }
 
 fn ld_0x41(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::B, val);
     1
 }
 
 fn ld_0x42(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::B, val);
     1
 }
 
 fn ld_0x43(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::B, val);
     1
 }
 
 fn ld_0x44(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::B, val);
     1
 }
 
 fn ld_0x45(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::B, val);
     1
 }
 
@@ -573,62 +585,90 @@ fn ld_0x46(cpu: &mut Cpu) -> u8 {
 }
 
 fn ld_0x47(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::B, val);
     1
 }
 
 fn ld_0x48(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::C, val);
     1
 }
 
 fn ld_0x49(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::C, val);
     1
 }
 
-fn ld_0x4A(cpu: &mut Cpu) -> u8 {
+fn ld_0x4a(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::C, val);
     1
 }
 
-fn ld_0x4B(cpu: &mut Cpu) -> u8 {
+fn ld_0x4b(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::C, val);
     1
 }
 
-fn ld_0x4C(cpu: &mut Cpu) -> u8 {
+fn ld_0x4c(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::C, val);
     1
 }
 
-fn ld_0x4D(cpu: &mut Cpu) -> u8 {
+fn ld_0x4d(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::C, val);
     1
 }
 
-fn ld_0x4E(cpu: &mut Cpu) -> u8 {
+fn ld_0x4e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x4F(cpu: &mut Cpu) -> u8 {
+fn ld_0x4f(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::C, val);
     1
 }
 
 fn ld_0x50(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::D, val);
     1
 }
 
 fn ld_0x51(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::D, val);
     1
 }
 
 fn ld_0x52(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::D, val);
     1
 }
 
 fn ld_0x53(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::D, val);
     1
 }
 
 fn ld_0x54(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::D, val);
     1
 }
 
 fn ld_0x55(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::D, val);
     1
 }
 
@@ -637,62 +677,90 @@ fn ld_0x56(cpu: &mut Cpu) -> u8 {
 }
 
 fn ld_0x57(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::D, val);
     1
 }
 
 fn ld_0x58(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::E, val);
     1
 }
 
 fn ld_0x59(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::E, val);
     1
 }
 
-fn ld_0x5A(cpu: &mut Cpu) -> u8 {
+fn ld_0x5a(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::E, val);
     1
 }
 
-fn ld_0x5B(cpu: &mut Cpu) -> u8 {
+fn ld_0x5b(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::E, val);
     1
 }
 
-fn ld_0x5C(cpu: &mut Cpu) -> u8 {
+fn ld_0x5c(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::E, val);
     1
 }
 
-fn ld_0x5D(cpu: &mut Cpu) -> u8 {
+fn ld_0x5d(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::E, val);
     1
 }
 
-fn ld_0x5E(cpu: &mut Cpu) -> u8 {
+fn ld_0x5e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x5F(cpu: &mut Cpu) -> u8 {
+fn ld_0x5f(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::E, val);
     1
 }
 
 fn ld_0x60(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::H, val);
     1
 }
 
 fn ld_0x61(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::H, val);
     1
 }
 
 fn ld_0x62(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::H, val);
     1
 }
 
 fn ld_0x63(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::H, val);
     1
 }
 
 fn ld_0x64(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::H, val);
     1
 }
 
 fn ld_0x65(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::H, val);
     1
 }
 
@@ -701,38 +769,54 @@ fn ld_0x66(cpu: &mut Cpu) -> u8 {
 }
 
 fn ld_0x67(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::H, val);
     1
 }
 
 fn ld_0x68(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::L, val);
     1
 }
 
 fn ld_0x69(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::L, val);
     1
 }
 
-fn ld_0x6A(cpu: &mut Cpu) -> u8 {
+fn ld_0x6a(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::L, val);
     1
 }
 
-fn ld_0x6B(cpu: &mut Cpu) -> u8 {
+fn ld_0x6b(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::L, val);
     1
 }
 
-fn ld_0x6C(cpu: &mut Cpu) -> u8 {
+fn ld_0x6c(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::L, val);
     1
 }
 
-fn ld_0x6D(cpu: &mut Cpu) -> u8 {
+fn ld_0x6d(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::L, val);
     1
 }
 
-fn ld_0x6E(cpu: &mut Cpu) -> u8 {
+fn ld_0x6e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x6F(cpu: &mut Cpu) -> u8 {
+fn ld_0x6f(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::L, val);
     1
 }
 
@@ -769,34 +853,48 @@ fn ld_0x77(cpu: &mut Cpu) -> u8 {
 }
 
 fn ld_0x78(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::B);
+    cpu.set_u8(Register::A, val);
     1
 }
 
 fn ld_0x79(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::C);
+    cpu.set_u8(Register::A, val);
     1
 }
 
-fn ld_0x7A(cpu: &mut Cpu) -> u8 {
+fn ld_0x7a(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::D);
+    cpu.set_u8(Register::A, val);
     1
 }
 
-fn ld_0x7B(cpu: &mut Cpu) -> u8 {
+fn ld_0x7b(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::E);
+    cpu.set_u8(Register::A, val);
     1
 }
 
-fn ld_0x7C(cpu: &mut Cpu) -> u8 {
+fn ld_0x7c(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::H);
+    cpu.set_u8(Register::A, val);
     1
 }
 
-fn ld_0x7D(cpu: &mut Cpu) -> u8 {
+fn ld_0x7d(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::L);
+    cpu.set_u8(Register::A, val);
     1
 }
 
-fn ld_0x7E(cpu: &mut Cpu) -> u8 {
+fn ld_0x7e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0x7F(cpu: &mut Cpu) -> u8 {
+fn ld_0x7f(cpu: &mut Cpu) -> u8 {
+    let val = cpu.get_u8(Register::A);
+    cpu.set_u8(Register::A, val);
     1
 }
 
@@ -840,27 +938,27 @@ fn adc_0x89(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn adc_0x8A(cpu: &mut Cpu) -> u8 {
+fn adc_0x8a(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn adc_0x8B(cpu: &mut Cpu) -> u8 {
+fn adc_0x8b(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn adc_0x8C(cpu: &mut Cpu) -> u8 {
+fn adc_0x8c(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn adc_0x8D(cpu: &mut Cpu) -> u8 {
+fn adc_0x8d(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn adc_0x8E(cpu: &mut Cpu) -> u8 {
+fn adc_0x8e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn adc_0x8F(cpu: &mut Cpu) -> u8 {
+fn adc_0x8f(cpu: &mut Cpu) -> u8 {
     1
 }
 
@@ -904,410 +1002,410 @@ fn sbc_0x99(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn sbc_0x9A(cpu: &mut Cpu) -> u8 {
+fn sbc_0x9a(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn sbc_0x9B(cpu: &mut Cpu) -> u8 {
+fn sbc_0x9b(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn sbc_0x9C(cpu: &mut Cpu) -> u8 {
+fn sbc_0x9c(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn sbc_0x9D(cpu: &mut Cpu) -> u8 {
+fn sbc_0x9d(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn sbc_0x9E(cpu: &mut Cpu) -> u8 {
+fn sbc_0x9e(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn sbc_0x9F(cpu: &mut Cpu) -> u8 {
+fn sbc_0x9f(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA0(cpu: &mut Cpu) -> u8 {
+fn and_0xa0(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA1(cpu: &mut Cpu) -> u8 {
+fn and_0xa1(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA2(cpu: &mut Cpu) -> u8 {
+fn and_0xa2(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA3(cpu: &mut Cpu) -> u8 {
+fn and_0xa3(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA4(cpu: &mut Cpu) -> u8 {
+fn and_0xa4(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA5(cpu: &mut Cpu) -> u8 {
+fn and_0xa5(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn and_0xA6(cpu: &mut Cpu) -> u8 {
+fn and_0xa6(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn and_0xA7(cpu: &mut Cpu) -> u8 {
+fn and_0xa7(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xA8(cpu: &mut Cpu) -> u8 {
+fn xor_0xa8(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xA9(cpu: &mut Cpu) -> u8 {
+fn xor_0xa9(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xAA(cpu: &mut Cpu) -> u8 {
+fn xor_0xaa(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xAB(cpu: &mut Cpu) -> u8 {
+fn xor_0xab(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xAC(cpu: &mut Cpu) -> u8 {
+fn xor_0xac(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xAD(cpu: &mut Cpu) -> u8 {
+fn xor_0xad(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xAE(cpu: &mut Cpu) -> u8 {
+fn xor_0xae(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn xor_0xAF(cpu: &mut Cpu) -> u8 {
+fn xor_0xaf(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB0(cpu: &mut Cpu) -> u8 {
+fn or_0xb0(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB1(cpu: &mut Cpu) -> u8 {
+fn or_0xb1(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB2(cpu: &mut Cpu) -> u8 {
+fn or_0xb2(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB3(cpu: &mut Cpu) -> u8 {
+fn or_0xb3(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB4(cpu: &mut Cpu) -> u8 {
+fn or_0xb4(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB5(cpu: &mut Cpu) -> u8 {
+fn or_0xb5(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn or_0xB6(cpu: &mut Cpu) -> u8 {
+fn or_0xb6(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn or_0xB7(cpu: &mut Cpu) -> u8 {
+fn or_0xb7(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xB8(cpu: &mut Cpu) -> u8 {
+fn cp_0xb8(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xB9(cpu: &mut Cpu) -> u8 {
+fn cp_0xb9(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xBA(cpu: &mut Cpu) -> u8 {
+fn cp_0xba(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xBB(cpu: &mut Cpu) -> u8 {
+fn cp_0xbb(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xBC(cpu: &mut Cpu) -> u8 {
+fn cp_0xbc(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xBD(cpu: &mut Cpu) -> u8 {
+fn cp_0xbd(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xBE(cpu: &mut Cpu) -> u8 {
+fn cp_0xbe(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn cp_0xBF(cpu: &mut Cpu) -> u8 {
+fn cp_0xbf(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn ret_0xC0(cpu: &mut Cpu) -> u8 {
+fn ret_0xc0(cpu: &mut Cpu) -> u8 {
     5
 }
 
-fn pop_0xC1(cpu: &mut Cpu) -> u8 {
+fn pop_0xc1(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn jp_0xC2(cpu: &mut Cpu) -> u8 {
+fn jp_0xc2(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn jp_0xC3(cpu: &mut Cpu) -> u8 {
+fn jp_0xc3(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn call_0xC4(cpu: &mut Cpu) -> u8 {
+fn call_0xc4(cpu: &mut Cpu) -> u8 {
     6
 }
 
-fn push_0xC5(cpu: &mut Cpu) -> u8 {
+fn push_0xc5(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn add_0xC6(cpu: &mut Cpu) -> u8 {
+fn add_0xc6(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xC7(cpu: &mut Cpu) -> u8 {
+fn rst_0xc7(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ret_0xC8(cpu: &mut Cpu) -> u8 {
+fn ret_0xc8(cpu: &mut Cpu) -> u8 {
     5
 }
 
-fn ret_0xC9(cpu: &mut Cpu) -> u8 {
+fn ret_0xc9(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn jp_0xCA(cpu: &mut Cpu) -> u8 {
+fn jp_0xca(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn prefix_0xCB(cpu: &mut Cpu) -> u8 {
+fn prefix_0xcb(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn call_0xCC(cpu: &mut Cpu) -> u8 {
+fn call_0xcc(cpu: &mut Cpu) -> u8 {
     6
 }
 
-fn call_0xCD(cpu: &mut Cpu) -> u8 {
+fn call_0xcd(cpu: &mut Cpu) -> u8 {
     6
 }
 
-fn adc_0xCE(cpu: &mut Cpu) -> u8 {
+fn adc_0xce(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xCF(cpu: &mut Cpu) -> u8 {
+fn rst_0xcf(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ret_0xD0(cpu: &mut Cpu) -> u8 {
+fn ret_0xd0(cpu: &mut Cpu) -> u8 {
     5
 }
 
-fn pop_0xD1(cpu: &mut Cpu) -> u8 {
+fn pop_0xd1(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn jp_0xD2(cpu: &mut Cpu) -> u8 {
+fn jp_0xd2(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn illegal_d3_0xD3(cpu: &mut Cpu) -> u8 {
+fn illegal_d3_0xd3(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn call_0xD4(cpu: &mut Cpu) -> u8 {
+fn call_0xd4(cpu: &mut Cpu) -> u8 {
     6
 }
 
-fn push_0xD5(cpu: &mut Cpu) -> u8 {
+fn push_0xd5(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn sub_0xD6(cpu: &mut Cpu) -> u8 {
+fn sub_0xd6(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xD7(cpu: &mut Cpu) -> u8 {
+fn rst_0xd7(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ret_0xD8(cpu: &mut Cpu) -> u8 {
+fn ret_0xd8(cpu: &mut Cpu) -> u8 {
     5
 }
 
-fn reti_0xD9(cpu: &mut Cpu) -> u8 {
+fn reti_0xd9(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn jp_0xDA(cpu: &mut Cpu) -> u8 {
+fn jp_0xda(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn illegal_db_0xDB(cpu: &mut Cpu) -> u8 {
+fn illegal_db_0xdb(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn call_0xDC(cpu: &mut Cpu) -> u8 {
+fn call_0xdc(cpu: &mut Cpu) -> u8 {
     6
 }
 
-fn illegal_dd_0xDD(cpu: &mut Cpu) -> u8 {
+fn illegal_dd_0xdd(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn sbc_0xDE(cpu: &mut Cpu) -> u8 {
+fn sbc_0xde(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xDF(cpu: &mut Cpu) -> u8 {
+fn rst_0xdf(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ldh_0xE0(cpu: &mut Cpu) -> u8 {
+fn ldh_0xe0(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn pop_0xE1(cpu: &mut Cpu) -> u8 {
+fn pop_0xe1(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn ldh_0xE2(cpu: &mut Cpu) -> u8 {
+fn ldh_0xe2(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn illegal_e3_0xE3(cpu: &mut Cpu) -> u8 {
+fn illegal_e3_0xe3(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn illegal_e4_0xE4(cpu: &mut Cpu) -> u8 {
+fn illegal_e4_0xe4(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn push_0xE5(cpu: &mut Cpu) -> u8 {
+fn push_0xe5(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn and_0xE6(cpu: &mut Cpu) -> u8 {
+fn and_0xe6(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xE7(cpu: &mut Cpu) -> u8 {
+fn rst_0xe7(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn add_0xE8(cpu: &mut Cpu) -> u8 {
+fn add_0xe8(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn jp_0xE9(cpu: &mut Cpu) -> u8 {
+fn jp_0xe9(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn ld_0xEA(cpu: &mut Cpu) -> u8 {
+fn ld_0xea(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn illegal_eb_0xEB(cpu: &mut Cpu) -> u8 {
+fn illegal_eb_0xeb(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn illegal_ec_0xEC(cpu: &mut Cpu) -> u8 {
+fn illegal_ec_0xec(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn illegal_ed_0xED(cpu: &mut Cpu) -> u8 {
+fn illegal_ed_0xed(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn xor_0xEE(cpu: &mut Cpu) -> u8 {
+fn xor_0xee(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xEF(cpu: &mut Cpu) -> u8 {
+fn rst_0xef(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ldh_0xF0(cpu: &mut Cpu) -> u8 {
+fn ldh_0xf0(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn pop_0xF1(cpu: &mut Cpu) -> u8 {
+fn pop_0xf1(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn ldh_0xF2(cpu: &mut Cpu) -> u8 {
+fn ldh_0xf2(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn di_0xF3(cpu: &mut Cpu) -> u8 {
+fn di_0xf3(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn illegal_f4_0xF4(cpu: &mut Cpu) -> u8 {
+fn illegal_f4_0xf4(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn push_0xF5(cpu: &mut Cpu) -> u8 {
+fn push_0xf5(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn or_0xF6(cpu: &mut Cpu) -> u8 {
+fn or_0xf6(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xF7(cpu: &mut Cpu) -> u8 {
+fn rst_0xf7(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ld_0xF8(cpu: &mut Cpu) -> u8 {
+fn ld_0xf8(cpu: &mut Cpu) -> u8 {
     3
 }
 
-fn ld_0xF9(cpu: &mut Cpu) -> u8 {
+fn ld_0xf9(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn ld_0xFA(cpu: &mut Cpu) -> u8 {
+fn ld_0xfa(cpu: &mut Cpu) -> u8 {
     4
 }
 
-fn ei_0xFB(cpu: &mut Cpu) -> u8 {
+fn ei_0xfb(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn illegal_fc_0xFC(cpu: &mut Cpu) -> u8 {
+fn illegal_fc_0xfc(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn illegal_fd_0xFD(cpu: &mut Cpu) -> u8 {
+fn illegal_fd_0xfd(cpu: &mut Cpu) -> u8 {
     1
 }
 
-fn cp_0xFE(cpu: &mut Cpu) -> u8 {
+fn cp_0xfe(cpu: &mut Cpu) -> u8 {
     2
 }
 
-fn rst_0xFF(cpu: &mut Cpu) -> u8 {
+fn rst_0xff(cpu: &mut Cpu) -> u8 {
     4
 }
